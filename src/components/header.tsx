@@ -13,12 +13,14 @@ export function Header() {
           <img
             src={theme === "dark" ? "/logo6.png" : "/logo5.png"}
             alt="WeatherHive logo"
-            className="h-16"
+            className="h-16 ml-[-12px]"
           />
         </Link>
 
         <div className="flex gap-4">
-          <CitySearch />
+          <div className="hidden md:block">
+            <CitySearch />
+          </div>
           <ThemeToggle />
         </div>
       </div>

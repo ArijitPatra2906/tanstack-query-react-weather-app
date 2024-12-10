@@ -1,3 +1,4 @@
+import { CitySearch } from "@/components/city-search";
 import { CurrentWeather } from "@/components/current-weather";
 import { FavoriteCities } from "@/components/favorite-cities";
 import { HourlyTemperature } from "@/components/hourly-temprature";
@@ -25,10 +26,6 @@ const WeatherDashboard = () => {
   const weatherQuery = useWeatherQuery(coordinates);
   const forecastQuery = useForecastQuery(coordinates);
   const locationQuery = useReverseGeocodeQuery(coordinates);
-
-  console.log(weatherQuery.data);
-  // console.log(forecastQuery);
-  console.log(locationQuery);
 
   // Function to refresh all data
   const handleRefresh = () => {
@@ -100,6 +97,9 @@ const WeatherDashboard = () => {
 
   return (
     <div className="space-y-4">
+      <div className="block md:hidden">
+        <CitySearch />
+      </div>
       <FavoriteCities />
       <div className="flex items-center justify-between">
         <h1 className="text-xl font-bold tracking-tight">My Location</h1>
